@@ -1,17 +1,25 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Star } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, Star } from "lucide-react";
 import { navLinks, site } from "@/lib/site";
 
 export default function Footer() {
   return (
     <footer className="mt-32 border-t border-bark-900/10 bg-bark-900 text-cream-100">
-      <div className="container-x grid gap-12 py-16 md:grid-cols-3">
+      <div className="container-x grid gap-12 py-16 md:grid-cols-[1.1fr_0.8fr_1fr]">
         <div>
-          <p className="font-display text-2xl">{site.name}</p>
+          <p className="font-display text-3xl leading-tight">{site.name}</p>
           <p className="mt-3 max-w-xs text-sm text-cream-200/70">
-            {site.tagline}. Hand-crafted, slow-fermented sourdough from {" "}
+            {site.tagline}. Hand-shaped, slow-fermented sourdough from{" "}
             {site.location}.
           </p>
+          <a
+            href={site.whatsappOrder}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary mt-6 bg-cream-50 text-bark-900 hover:bg-cream-200"
+          >
+            Order on WhatsApp
+          </a>
         </div>
 
         <div>
@@ -37,6 +45,17 @@ export default function Footer() {
             Get in touch
           </p>
           <ul className="mt-4 flex flex-col gap-3 text-sm">
+            <li>
+              <a
+                className="inline-flex items-center gap-2 text-cream-100/85 hover:text-cream-50"
+                href={site.whatsappOrder}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="h-4 w-4 text-crust-400" />
+                WhatsApp order
+              </a>
+            </li>
             <li>
               <a
                 className="inline-flex items-center gap-2 text-cream-100/85 hover:text-cream-50"

@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import ProductCard from "@/components/ProductCard";
+import OrderCallout from "@/components/OrderCallout";
 import { sourdoughs } from "@/lib/products";
 
 export const metadata = { title: "Our Sourdough" };
@@ -16,13 +17,13 @@ export default function SourdoughPage() {
       />
 
       <section className="container-x py-16">
-        <div className="grid gap-3 rounded-3xl border border-bark-900/10 bg-cream-50 p-8 sm:grid-cols-3">
+        <div className="grid gap-4 rounded-[2.25rem] border border-bark-900/10 bg-cream-50/80 p-6 shadow-[0_18px_70px_-54px_rgba(38,23,11,0.75)] backdrop-blur sm:grid-cols-3 sm:p-8">
           {[
-            ["Naturally leavened", "No commercial yeast — only wild starter."],
+            ["Naturally fermented", "Built around mature cultures and patient dough."],
             ["Higher in nutrients", "More vitamins, minerals & antioxidants."],
             ["Easier to digest", "More probiotics, lower gluten levels."],
           ].map(([t, b]) => (
-            <div key={t}>
+            <div key={t} className="rounded-3xl bg-cream-200/55 p-5">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-crust-600">
                 {t}
               </p>
@@ -39,6 +40,11 @@ export default function SourdoughPage() {
           ))}
         </div>
       </section>
+
+      <OrderCallout
+        title="Choose your sourdough, then give it time."
+        body="Most loaves need at least two days' notice so the culture can ferment properly and the bread can leave the oven fresh."
+      />
     </>
   );
 }

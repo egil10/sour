@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X, Wheat } from "lucide-react";
 import { navLinks, site } from "@/lib/site";
@@ -8,6 +9,8 @@ import { navLinks, site } from "@/lib/site";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const onHero = pathname === "/" && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -26,12 +29,24 @@ export default function Navbar() {
     >
       <div className="container-x flex h-20 items-center justify-between">
         <Link href="/" className="group flex items-center gap-2.5">
-          <span className="grid h-10 w-10 place-items-center rounded-full bg-bark-900 text-cream-100 transition group-hover:rotate-6">
+          <span
+            className={`grid h-10 w-10 place-items-center rounded-full transition group-hover:rotate-6 ${
+              onHero ? "bg-cream-50 text-bark-900" : "bg-bark-900 text-cream-100"
+            }`}
+          >
             <Wheat className="h-5 w-5" />
           </span>
-          <span className="font-display text-lg leading-tight text-bark-900">
+          <span
+            className={`font-display text-lg leading-tight transition ${
+              onHero ? "text-cream-50" : "text-bark-900"
+            }`}
+          >
             Stef's
-            <span className="block text-[10px] font-sans uppercase tracking-[0.28em] text-crust-600">
+            <span
+              className={`block text-[10px] font-sans font-extrabold uppercase tracking-[0.28em] ${
+                onHero ? "text-cream-200" : "text-crust-600"
+              }`}
+            >
               Sourdough Basket
             </span>
           </span>
@@ -42,7 +57,15 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm text-bark-800/80 transition hover:text-bark-900"
+              className={`relative text-sm font-bold transition after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:rounded-full after:transition-all ${
+                pathname === l.href
+                  ? "after:w-full"
+                  : "after:w-0 hover:after:w-full"
+              } ${
+                onHero
+                  ? "text-cream-100/85 hover:text-cream-50 after:bg-cream-50"
+                  : "text-bark-800/80 hover:text-bark-900 after:bg-crust-600"
+              }`}
             >
               {l.label}
             </Link>
@@ -50,10 +73,14 @@ export default function Navbar() {
         </nav>
 
         <a
-          href={site.whatsapp}
+          href={site.whatsappOrder}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden lg:inline-flex btn-primary"
+          className={`hidden lg:inline-flex ${
+            onHero
+              ? "btn-primary bg-cream-50 text-bark-900 hover:bg-cream-200"
+              : "btn-primary"
+          }`}
         >
           Order on WhatsApp
         </a>
@@ -61,7 +88,11 @@ export default function Navbar() {
         <button
           aria-label="Open menu"
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-full border border-bark-900/15 text-bark-900 lg:hidden"
+          className={`grid h-10 w-10 place-items-center rounded-full border lg:hidden ${
+            onHero
+              ? "border-cream-50/30 text-cream-50"
+              : "border-bark-900/15 text-bark-900"
+          }`}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -85,7 +116,7 @@ export default function Navbar() {
                 ))}
               </ul>
               <a
-                href={site.whatsapp}
+                href={site.whatsappOrder}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary mt-3 w-full"

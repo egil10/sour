@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 export default function WhatsAppFab() {
   return (
     <a
-      href={site.whatsapp}
+      href={site.whatsappOrder}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Message us on WhatsApp"

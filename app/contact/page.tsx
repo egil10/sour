@@ -1,5 +1,5 @@
 import { Mail, MapPin, MessageCircle, Phone, Star } from "lucide-react";
-import { site } from "@/lib/site";
+import { orderSteps, site } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 
 export const metadata = { title: "Contact" };
@@ -16,11 +16,11 @@ export default function ContactPage() {
       />
 
       <section className="container-x grid gap-10 pb-20 md:grid-cols-[1fr_1.2fr]">
-        <div className="rounded-3xl border border-bark-900/10 bg-cream-50 p-8">
+        <div className="soft-panel p-8">
           <h2 className="h-display text-3xl">Reach us</h2>
           <ul className="mt-6 flex flex-col gap-5">
             <li>
-              <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4">
+              <a href={site.whatsappOrder} target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4">
                 <span className="grid h-11 w-11 place-items-center rounded-full bg-moss-600 text-cream-50">
                   <MessageCircle className="h-5 w-5" />
                 </span>
@@ -88,13 +88,30 @@ export default function ContactPage() {
             <Star className="h-4 w-4 fill-crust-500 text-crust-500" /> See our Google reviews
           </a>
 
-          <p className="mt-8 rounded-2xl bg-cream-200/60 p-4 text-sm text-bark-700">
+          <div className="mt-8 rounded-2xl bg-cream-200/70 p-5 text-sm text-bark-700">
+            <p className="font-extrabold text-bark-900">Ordering rhythm</p>
+            <ol className="mt-3 grid gap-3">
+              {orderSteps.map((step, index) => (
+                <li key={step.title} className="flex gap-3">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-bark-900 text-xs font-extrabold text-cream-50">
+                    {index + 1}
+                  </span>
+                  <span>
+                    <span className="font-extrabold text-bark-900">{step.title}: </span>
+                    {step.body}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <p className="mt-5 rounded-2xl bg-moss-400/20 p-4 text-sm text-bark-700">
             {site.preorderNotice} You can also find our breads at trusted outlets
             around Lusaka.
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-3xl border border-bark-900/10 bg-cream-50">
+        <div className="overflow-hidden rounded-[2rem] border border-bark-900/10 bg-cream-50 shadow-[0_24px_80px_-58px_rgba(38,23,11,0.75)]">
           <div className="aspect-[4/3] w-full">
             <iframe
               title="Stef's Sourdough Basket — Lusaka outlets"

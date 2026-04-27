@@ -21,6 +21,11 @@ export default function SectionHeader({
           {description}
         </p>
       )}
+      <div
+        className={`mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-crust-500 to-moss-500 ${
+          align === "center" ? "mx-auto" : ""
+        }`}
+      />
     </div>
   );
 }

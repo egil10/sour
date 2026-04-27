@@ -1,10 +1,12 @@
 export const site = {
   name: "Stef's Sourdough Basket",
-  tagline: "from sourdough culture… to sourdough loaf",
+  tagline: "from sourdough culture to sourdough loaf",
   location: "Foxdale Forest, Lusaka",
   phone: "+260 968 220 381",
   phoneHref: "tel:+260968220381",
   whatsapp: "https://wa.me/260968220381",
+  whatsappOrder:
+    "https://wa.me/260968220381?text=Hello%20Stef%27s%20Sourdough%20Basket%2C%20I%27d%20like%20to%20pre-order%20bread.",
   email: "dumelang2007@gmail.com",
   emailHref: "mailto:dumelang2007@gmail.com",
   googleReviews:
@@ -23,4 +25,19 @@ export const navLinks = [
   { href: "/buns", label: "Buns" },
   { href: "/christmas-treats", label: "Christmas" },
   { href: "/contact", label: "Contact" },
+];
+
+export const orderSteps = [
+  {
+    title: "Choose your basket",
+    body: "Pick sourdough loaves, gluten-free breads, buns or seasonal German treats.",
+  },
+  {
+    title: "Message us",
+    body: "Send your order on WhatsApp with your preferred day and pickup or delivery needs.",
+  },
+  {
+    title: "We bake slowly",
+    body: "Give us at least two days so the dough can ferment properly and leave the oven fresh.",
+  },
 ];

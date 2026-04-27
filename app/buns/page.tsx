@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import ProductCard from "@/components/ProductCard";
+import OrderCallout from "@/components/OrderCallout";
 import { buns } from "@/lib/products";
 
 export const metadata = { title: "Buns" };
@@ -21,10 +22,22 @@ export default function BunsPage() {
             <ProductCard key={p.slug} product={p} />
           ))}
         </div>
-        <p className="mt-10 rounded-3xl bg-cream-200/60 px-6 py-4 text-center text-sm text-bark-700">
-          Minimum order · 20 buns. Pre-order at least two days in advance.
-        </p>
+        <div className="mt-10 grid gap-4 rounded-[2.25rem] bg-cream-200/70 p-6 text-bark-800 sm:grid-cols-3">
+          <p className="font-display text-3xl leading-tight text-bark-900">
+            Best for generous tables.
+          </p>
+          <p className="sm:col-span-2">
+            Minimum order: 20 buns. Pre-order at least two days in advance,
+            especially when you need a specific mix for an event, office lunch
+            or family gathering.
+          </p>
+        </div>
       </section>
+
+      <OrderCallout
+        title="Planning buns for a crowd?"
+        body="Send the bun type, quantity and date you need them. We will confirm the batch and timing on WhatsApp."
+      />
     </>
   );
 }

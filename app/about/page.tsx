@@ -1,5 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import OrderCallout from "@/components/OrderCallout";
 
 export const metadata = { title: "Who's the Baker" };
 
@@ -32,20 +35,27 @@ export default function AboutPage() {
         imageAlt="Stef, founder of the bakery"
       />
 
-      <section className="container-x grid gap-12 py-20 md:grid-cols-[1.2fr_1fr] md:items-start">
-        <div className="prose prose-lg max-w-none text-bark-800/90">
-          <p>
+      <section className="container-x grid gap-12 py-20 md:grid-cols-[1.05fr_1fr] md:items-start">
+        <div className="soft-panel p-8 sm:p-10">
+          <span className="section-eyebrow">The bakery rhythm</span>
+          <h2 className="h-display text-4xl sm:text-5xl">
+            A small team, a stubborn standard, and dough that refuses to be rushed.
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-bark-800/90">
             What started as a one-woman operation in a German-style home kitchen
             has grown into a small artisan bakery with over a decade of
             professional experience — and an unwavering commitment to baking
             the most savoury and most authentic sourdough in Zambia.
           </p>
-          <p>
+          <p className="mt-5 leading-relaxed text-bark-700/90">
             On any given day you'll find us delivering bread, selling at the
             market, experimenting with new recipes, updating the website,
             chatting with customers, doing the books — and troubleshooting
             whatever the day throws at us.
           </p>
+          <Link href="/sourdough" className="btn-primary mt-8">
+            Explore the bread <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -110,6 +120,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <OrderCallout
+        title="Want bread from this week's bake?"
+        body="The bakery is small by design. Message ahead and we will confirm what can be baked fresh for your preferred day."
+      />
     </>
   );
 }
