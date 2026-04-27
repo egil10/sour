@@ -24,6 +24,27 @@ const team = [
   },
 ];
 
+const bakeJourney = [
+  {
+    title: "The dough",
+    caption: "Hands in the work: shaping, watching and learning from every batch.",
+    image: "/images/about/team-1.jpg",
+    alt: "Bakery team working with dough",
+  },
+  {
+    title: "The bake",
+    caption: "Heat, timing and judgement turn the slow-fermented dough into bread.",
+    image: "/images/about/team-2.jpg",
+    alt: "Freshly baked bread at the bakery",
+  },
+  {
+    title: "The finished loaf",
+    caption: "Scored, crusted and ready for the basket.",
+    image: "/images/about/alice-bake.jpg",
+    alt: "Finished sourdough loaf",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -58,19 +79,34 @@ export default function AboutPage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
-            <Image src="/images/about/team-bakery.jpg" alt="In the bakery" fill className="object-cover" sizes="(min-width:768px) 25vw, 50vw" />
-          </div>
-          <div className="relative mt-10 aspect-[3/4] overflow-hidden rounded-3xl">
-            <Image src="/images/about/team-1.jpg" alt="Team at work" fill className="object-cover" sizes="(min-width:768px) 25vw, 50vw" />
-          </div>
-          <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
-            <Image src="/images/about/alice-bake.jpg" alt="Shaping a loaf" fill className="object-cover" sizes="(min-width:768px) 25vw, 50vw" />
-          </div>
-          <div className="relative -mt-6 aspect-[3/4] overflow-hidden rounded-3xl">
-            <Image src="/images/about/team-2.jpg" alt="Team portrait" fill className="object-cover" sizes="(min-width:768px) 25vw, 50vw" />
-          </div>
+        <div className="space-y-4">
+          {bakeJourney.map((step, index) => (
+            <article
+              key={step.title}
+              className="group grid gap-4 rounded-[2rem] border border-bark-900/10 bg-cream-50/80 p-3 shadow-[0_18px_70px_-56px_rgba(38,23,11,0.8)] backdrop-blur transition hover:-translate-y-1 sm:grid-cols-[0.9fr_1fr]"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
+                <Image
+                  src={step.image}
+                  alt={step.alt}
+                  fill
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                  sizes="(min-width:768px) 22vw, 100vw"
+                />
+              </div>
+              <div className="flex flex-col justify-center p-3">
+                <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-crust-600">
+                  Step 0{index + 1}
+                </p>
+                <h3 className="mt-2 font-display text-3xl leading-tight text-bark-900">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-bark-700/85">
+                  {step.caption}
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

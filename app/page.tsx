@@ -11,6 +11,7 @@ import {
   Wheat,
 } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
+import BasketChat from "@/components/BasketChat";
 import { orderSteps, site } from "@/lib/site";
 
 const categories = [
@@ -348,7 +349,7 @@ export default function HomePage() {
       <section className="container-x pb-12">
         <div className="relative overflow-hidden rounded-[2.75rem] bg-gradient-to-br from-berry-700 via-bark-900 to-crust-700 p-8 text-cream-50 sm:p-14">
           <div className="grain absolute inset-0 opacity-60" />
-          <div className="relative grid gap-8 md:grid-cols-[2fr_1fr] md:items-end">
+          <div className="relative grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
             <div>
               <span className="section-eyebrow text-crust-300">Pre-order</span>
               <h2 className="h-display text-4xl text-cream-50 sm:text-6xl">
@@ -357,23 +358,24 @@ export default function HomePage() {
               <p className="mt-5 max-w-xl text-cream-100/85">
                 {site.preorderNotice}
               </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={site.whatsappOrder}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary bg-cream-50 text-bark-900 hover:bg-cream-200"
+                >
+                  WhatsApp us
+                </a>
+                <Link
+                  href="/contact"
+                  className="btn-ghost border-cream-50/35 bg-transparent text-cream-50 hover:bg-cream-50/10"
+                >
+                  Contact details
+                </Link>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-3 md:justify-end">
-              <a
-                href={site.whatsappOrder}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary bg-cream-50 text-bark-900 hover:bg-cream-200"
-              >
-                WhatsApp us
-              </a>
-              <Link
-                href="/contact"
-                className="btn-ghost border-cream-50/35 bg-transparent text-cream-50 hover:bg-cream-50/10"
-              >
-                Contact details
-              </Link>
-            </div>
+            <BasketChat />
           </div>
         </div>
       </section>
