@@ -1,6 +1,7 @@
 import PageHero from "@/components/PageHero";
 import ProductCard from "@/components/ProductCard";
 import OrderCallout from "@/components/OrderCallout";
+import ChristmasCountdown from "@/components/ChristmasCountdown";
 import { christmasTreats } from "@/lib/products";
 
 export const metadata = { title: "Christmas Treats" };
@@ -15,6 +16,8 @@ export default function ChristmasPage() {
         image="/images/christmas/stollen.jpg"
         imageAlt="A Christmas Stollen on a wooden board"
       />
+
+      <ChristmasCountdown />
 
       <section className="container-x pb-24 pt-8">
         <div className="mb-10 rounded-[2.25rem] border border-berry-600/15 bg-berry-600/10 p-6 text-bark-800 sm:p-8">
