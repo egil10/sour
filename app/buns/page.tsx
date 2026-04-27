@@ -11,7 +11,7 @@ export default function BunsPage() {
       <PageHero
         eyebrow="Our buns"
         title="Brötchen — the German way."
-        description="Our buns are the product of mixing traditional German recipes with locally available ingredients. Available for orders of 20 or more — the average German eats one Brötchen a day, after all."
+        description="Our buns are the product of mixing traditional German recipes with locally available ingredients and are available for orders of 20 or more."
         image="/images/buns/whole-wheat.jpg"
         imageAlt="A basket of freshly baked buns"
       />
@@ -27,9 +27,10 @@ export default function BunsPage() {
             Best for generous tables.
           </p>
           <p className="sm:col-span-2">
-            Minimum order: 20 buns. Pre-order at least two days in advance,
-            especially when you need a specific mix for an event, office lunch
-            or family gathering.
+            Brötchen have a rich history and are popular in Europe and
+            overseas. The average German eats one Brötchen a day. Pre-order at
+            least two days in advance, especially when you need a specific mix
+            for an event, office lunch or family gathering.
           </p>
         </div>
       </section>

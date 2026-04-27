@@ -11,7 +11,7 @@ export default function ChristmasPage() {
       <PageHero
         eyebrow="Our Christmas treats"
         title="Stollen, Lebkuchen & Christmas carols baked in."
-        description="In the Christmas season we offer traditional German Stollen and Lebkuchen. More a sweet bread than a cake, Stollen contains nuts, dried fruits, spices and marzipan, topped with homemade vanilla sugar. Lebkuchen are honey cookies comparable to gingerbread."
+        description="In the Christmas season, we have traditional German Stollen and Lebkuchen on offer."
         image="/images/christmas/stollen.jpg"
         imageAlt="A Christmas Stollen on a wooden board"
       />
@@ -22,9 +22,12 @@ export default function ChristmasPage() {
             Seasonal bakes
           </p>
           <p className="mt-3 max-w-3xl leading-relaxed">
-            These are richer, slower festive recipes with spice mixes, nuts,
-            fruit and butter. Availability is seasonal, so early ordering is the
-            safest way to avoid the Christmas rush.
+            More a sweet bread than a cake, Stollen generally contains a
+            variety of nuts, dried fruits, spices and marzipan, and is topped
+            with homemade vanilla sugar. Lebkuchen are honey cookies comparable
+            to gingerbread and usually include various spices and nuts.
+            Availability is seasonal, so early ordering is the safest way to
+            avoid the Christmas rush.
           </p>
         </div>
         <div className="grid gap-6 lg:grid-cols-3">

@@ -11,7 +11,7 @@ export default function GFPage() {
       <PageHero
         eyebrow="Our gluten-frees"
         title="Gluten-free, with the same sourdough soul."
-        description="While the fermentation in sourdough reduces gluten levels, the proteins occur naturally in all traditional bread flours. We bake several gluten-free sourdough options — mainly based on white rice and sorghum — crafted with special care to avoid contamination."
+        description="While fermentation in sourdough reduces gluten levels, gluten proteins occur naturally in all traditional flours used for bread baking."
         image="/images/gluten-free/gf-farmhouse.jpg"
         imageAlt="A loaf of gluten-free sourdough bread"
       />
@@ -22,10 +22,11 @@ export default function GFPage() {
             A careful note
           </p>
           <p className="mt-3 max-w-3xl leading-relaxed">
-            These breads are made for customers avoiding gluten and are handled
-            with special care. If you have a severe allergy or medical
-            intolerance, please message us directly before ordering so we can
-            discuss the current bakery setup honestly.
+            After much experimenting, we are proud to offer several gluten-free
+            sourdough options, mainly based on white rice and sorghum flours.
+            These breads are handled with special care. If you have a severe
+            allergy or medical intolerance, please message us before ordering
+            so we can discuss the current bakery setup honestly.
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
