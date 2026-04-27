@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import BasketChat from "@/components/BasketChat";
+import ReviewsSection from "@/components/ReviewsSection";
 import { orderSteps, site } from "@/lib/site";
 
 const categories = [
@@ -345,6 +346,8 @@ export default function HomePage() {
           Baked in Foxdale Forest and shared across Lusaka.
         </div>
       </section>
+
+      <ReviewsSection />
 
       <section className="container-x pb-12">
         <div className="relative overflow-hidden rounded-[2.75rem] bg-gradient-to-br from-berry-700 via-bark-900 to-crust-700 p-8 text-cream-50 sm:p-14">
