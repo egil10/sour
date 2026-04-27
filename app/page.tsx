@@ -14,6 +14,10 @@ import SectionHeader from "@/components/SectionHeader";
 import BasketChat from "@/components/BasketChat";
 import ReviewsSection from "@/components/ReviewsSection";
 import { orderSteps, site } from "@/lib/site";
+import greensAndGrainsLogo from "@/logos/greens-and-grains-logo.png";
+import proteaLogo from "@/logos/protea-hotels-marriot-logo.png";
+import mochaLogo from "@/logos/the-mocha-puddle-logo.jpg";
+import woolworthsLogo from "@/logos/woolworths-logo.png";
 
 const categories = [
   {
@@ -75,9 +79,10 @@ const qualityNotes = [
 ];
 
 const stockists = [
-  { name: "Woolworths", logo: "/images/outlets/woolies.png" },
-  { name: "Mocha", logo: "/images/outlets/mocha.jpg" },
-  { name: "Protea Hotel", logo: "/images/outlets/protea.png" },
+  { name: "Woolworths", logo: woolworthsLogo },
+  { name: "Greens and Grains", logo: greensAndGrainsLogo },
+  { name: "The Mocha Puddle", logo: mochaLogo },
+  { name: "Protea Hotels by Marriott", logo: proteaLogo },
 ];
 
 export default function HomePage() {
@@ -332,11 +337,17 @@ export default function HomePage() {
           description="Selected breads are available through trusted outlets. Direct WhatsApp ordering is still the best route when you want something specific."
           align="center"
         />
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {stockists.map((s) => (
             <div key={s.name} className="soft-panel grid min-h-36 place-items-center p-8">
-              <div className="relative h-16 w-44 grayscale transition hover:grayscale-0">
-                <Image src={s.logo} alt={s.name} fill className="object-contain" />
+              <div className="relative h-16 w-44 grayscale transition hover:scale-105 hover:grayscale-0">
+                <Image
+                  src={s.logo}
+                  alt={`${s.name} logo`}
+                  fill
+                  className="object-contain"
+                  sizes="176px"
+                />
               </div>
             </div>
           ))}
